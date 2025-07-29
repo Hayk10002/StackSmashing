@@ -2,15 +2,15 @@
 #include <cstdio>
 
 void f() {
-    std::cout << "Hijacked!\n";
+    std::cout << "Hijacked!" << std::endl;
 }
 
 void vulnerable() {
-    std::cout << "Leaked f() address: " << (void*)f << "\n";
+    std::cout << "Leaked f() address: " << (void*)f << std::endl;
     char buffer[16];
     std::cout << "Enter input: ";
     fgets(buffer, 200, stdin); // overflow
-    printf("Input: %s\n", buffer);
+    std::cout << "Done" << std::endl;
 }
 
 int main() {
