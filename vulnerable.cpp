@@ -9,7 +9,7 @@ void vulnerable() {
     std::cout << "Leaked f() address: " << (void*)f << "\n";
     char buffer[16];
     std::cout << "Enter input: ";
-    gets(buffer);  // overflow
+    fgets(buffer, 200, stdin); // overflow
     printf("Input: %s\n", buffer);
 }
 
