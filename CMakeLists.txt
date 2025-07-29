@@ -8,4 +8,4 @@ add_executable(vulnerable vulnerable.cpp)
 set_property(TARGET vulnerable PROPERTY CXX_STANDARD 23)
 
 enable_testing()
-add_test(NAME MainTest COMMAND run.sh $<TARGET_FILE:vulnerable>)
+add_test(NAME MainTest COMMAND "${CMAKE_SOURCE_DIR}\\run.sh" $<TARGET_FILE:vulnerable>)
