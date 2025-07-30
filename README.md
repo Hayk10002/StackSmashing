@@ -37,3 +37,5 @@ To see a working example, see the latest run in [Github Actions](https://github.
 
 1. Runs the vulnerable executable with gdb and extracts a valueable information about the executable, the offset which can be used to overwrite the return pointer of a function.
 1. Then, runs the executable again, captures the leaked address of the function to which the control flow will be forwarded to, and then using the offset, actually overwrites the return pointer of a function to the leaked one, successfully hijacking the control flow.
+
+Tests also will show that turning stack canaries on will prevent this exploit.
